@@ -5,12 +5,9 @@ services:
   web:
     build: .
     container_name: web
-    environment:
-      PG_DSN: "..."
-    ports:
-      - "8080:8080"
     volumes:
       - ./:/app
+    env_file: .env
 
   nginx:
     container_name: "nginx"
